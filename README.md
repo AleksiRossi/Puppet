@@ -13,4 +13,5 @@ Netdata module is my first own Puppet module. It has 2 manifests. First one is i
 You can run these modules with following commands:
 
 puppet apply --modulepath modules/ -e 'class {"netdata::install":}'
+
 puppet apply --modulepath modules/ -e 'class {"netdata":}'
