@@ -15,3 +15,6 @@ You can run these modules with following commands:
 puppet apply --modulepath modules/ -e 'class {"netdata::install":}'
 
 puppet apply --modulepath modules/ -e 'class {"netdata":}'
+
+Afterwards run the installer  /opt/netdata_installer/netdata-installer.sh and open your browser at
+http://localhost:19999
