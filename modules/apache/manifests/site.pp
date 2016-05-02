@@ -8,10 +8,6 @@ class apache::site {
 		command => 'a2dissite 000-default.conif',
 		refreshonly => true,
 	}
-	exec { 'dissite':
-		path => [ '/bin', '/usr/bin', '/usr/sbin' ],
-		command => 'a2dissite 000-default.conf'
-	}
 	file { '/home/aleksi/website':
 		ensure => 'directory',
 		owner => 'aleksi',
