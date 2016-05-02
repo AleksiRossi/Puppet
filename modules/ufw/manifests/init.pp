@@ -6,7 +6,7 @@ class ufw {
         exec { 'ufw-deny':
                 path => [ '/bin', '/usr/bin', '/usr/sbin' ],
                 command => 'ufw default deny',
-                unless => 'ufw status verbose | grep "deny (incoming)"',
+                unless => 'sudo ufw status verbose | grep "Default: deny (incoming), allow (outgoing)"',
         }
         exec { 'ufw-enable':
                 path => [ '/bin', '/usr/bin', '/usr/sbin' ],
