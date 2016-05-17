@@ -18,20 +18,29 @@ class icinga {
         }
 	file {'/etc/icinga2/conf.d/commands':
 		ensure => 'directory',
+		require => Package['icinga2'],
 	}
 	file {'/etc/icinga2/conf.d/commands/commands.conf':
 		content => template('icinga/commands.erb'),
+		require => Package['icinga2'],
 	}
 	file {'/usr/lib/nagios/plugins/check_memory':
 		content => template('icinga/check_memory.erb'),
 		mode => '0755',
+		require => Package['nagios-plugins'],
 	}
 	file {'/etc/icinga2/pki':
 		ensure => 'directory',
-		owner => 'nagios'
+		owner => 'nagios',
+		require => Package['icinga2'],
 	}
-	icinga::setup {'puppet.local':
+	icinga::setup {'slave':
 		master => 'icinga-server',
-		ticket => 'd19b78cd63278d8be236988f44ca43cf2cf12542',
+		ticket => '83e6f0a7e680c59754a61e7592ae1fc618ef2e19',
+		require => Package['icinga2'],
+		notify => File['/etc/icinga2/features-enabled/api.conf'],
+	}
+	file {'/etc/icinga2/features-enabled/api.conf':
+		content => template('icinga/api.erb'),
 	}	
 }
