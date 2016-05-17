@@ -6,6 +6,6 @@ class kissa {
                 password => '$1$14JS1V4P$WoIWjG.QsbZDhiVTN3f9A/',
                 shell => '/bin/bash',
                 uid => '1001',
-                managehome => true,
+		managehome => true,
         }
 }

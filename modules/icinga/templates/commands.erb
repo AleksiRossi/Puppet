@@ -1,0 +1,29 @@
+object CheckCommand "check_memory" {
+        import "plugin-check-command"
+        command = [PluginDir + "/check_memory"]
+        arguments = {
+                "-w" = "85"
+                "-c" = "95"
+                "-u" = ""
+        }
+}
+
+object CheckCommand "check_disk" {
+        import "plugin-check-command"
+        command = [PluginDir + "/check_disk"]
+        arguments = {
+                "-w" = "15%"
+                "-c" = "5%"
+                "-p" = "/"
+        }
+}
+
+object CheckCommand "check_load" {
+        import "plugin-check-command"
+        command = [PluginDir + "/check_load"]
+        arguments = {
+                "-w" = "0.85 0.8 0.75"
+                "-c" = "0.95 0.9 0.85"
+        }
+}
+
