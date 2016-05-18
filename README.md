@@ -22,3 +22,13 @@ UFW module - Enables UFW, enforces default settings and allows all ssh connectio
 
 Icinga module - Adds Icinga2 client and configures it for remote monitoring with master server.
 
+## Sources
+
+http://terokarvinen.com/2016/aikataulu-%E2%80%93-linuxin-keskitetty-hallinta-ict4tn011-9-loppukevat-2016
+http://terokarvinen.com/2013/ssh-server-puppet-module-for-ubuntu-12-04
+http://www.puppetcookbook.com/
+https://docs.puppet.com/puppet/latest/reference/lang_defined_types.html
+http://theforeman.org/manuals/1.1/index.html
+http://serverfault.com/questions/647805/how-to-set-up-icinga2-remote-client-without-using-cli-wizard
+http://docs.icinga.org/icinga2/latest/doc/module/icinga2/chapter/icinga2-client
+
